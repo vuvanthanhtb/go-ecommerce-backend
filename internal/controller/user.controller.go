@@ -1,10 +1,9 @@
 package controller
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 	"github.com/vuvanthanhtb/go-ecommerce-backend/internal/service"
+	"github.com/vuvanthanhtb/go-ecommerce-backend/packages/response"
 )
 
 type UserController struct {
@@ -16,5 +15,6 @@ func NewUserController() *UserController {
 }
 
 func (uc *UserController) GetInfoUser(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{"message": uc.userService.GetInfoUser()})
+	// response.SuccessResponse(ctx, 2001, "success", uc.userService.GetInfoUser())
+	response.ErrorResponse(ctx, 2003)
 }
