@@ -14,7 +14,7 @@ mysql:
 logger:
   log_level: debug
   file_log_name: "./storages/logs/dev.log"
-  max_size: 500, # megabytes
+  max_size: 500 # megabytes
   max_backups: 3
   max_age: 28   # days
   compress: true # disabled by default
