@@ -32,8 +32,8 @@ func InitMysql() {
 	global.Mdb = db
 
 	SetPool()
-	migrateTables()
-	genTableDAO()
+	// migrateTables()
+	// genTableDAO()
 }
 
 func SetPool() {
