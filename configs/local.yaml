@@ -18,3 +18,10 @@ logger:
   max_backups: 3
   max_age: 28   # days
   compress: true # disabled by default
+
+redis:
+  host: 127.0.0.1
+  port: 6319
+  password:
+  database: 0
+  poolSize: 10
