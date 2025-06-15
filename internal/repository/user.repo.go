@@ -1,15 +1,5 @@
 package repository
 
-// type UserRepo struct{}
-
-// func NewUserRepo() *UserRepo {
-// 	return &UserRepo{}
-// }
-
-// func (ur *UserRepo) GetInfoUser() string {
-// 	return "thanhvv"
-// }
-
 type IUserRepository interface {
 	GetUserByEmail(email string) bool
 }
