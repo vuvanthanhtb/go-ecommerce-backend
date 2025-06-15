@@ -1,9 +1,15 @@
 package setting
 
 type Config struct {
+	Server ServerConfig  `mapstructure:"server"`
 	MySQL  MySQlSetting  `mapstructure:"mysql"`
 	Logger LoggerSetting `mapstructure:"logger"`
 	Redis  RedisSetting  `mapstructure:"redis"`
+}
+
+type ServerConfig struct {
+	Port int    `mapstructure:"port"`
+	Mode string `mapstructure:"mode"`
 }
 
 type RedisSetting struct {
