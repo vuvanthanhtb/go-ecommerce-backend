@@ -13,10 +13,10 @@ type ResponseData struct {
 }
 
 // success reponse
-func SuccessResponse(ctx *gin.Context, code int, message string, data interface{}) {
+func SuccessResponse(ctx *gin.Context, code int, data interface{}) {
 	ctx.JSON(http.StatusOK, ResponseData{
 		Code:    code,
-		Message: message,
+		Message: msg[code],
 		Data:    data,
 	})
 }

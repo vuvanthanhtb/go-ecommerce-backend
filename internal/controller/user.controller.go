@@ -7,14 +7,17 @@ import (
 )
 
 type UserController struct {
-	userService *service.UserService
+	userService service.IUserService
 }
 
-func NewUserController() *UserController {
-	return &UserController{userService: service.NewUserService()}
+// Register implements IUserController.
+func (uc *UserController) Register(ctx *gin.Context) {
+	result := uc.userService.Register("", "")
+	response.SuccessResponse(ctx, result, nil)
 }
 
-func (uc *UserController) GetInfoUser(ctx *gin.Context) {
-	// response.SuccessResponse(ctx, 2001, "success", uc.userService.GetInfoUser())
-	response.ErrorResponse(ctx, 2003)
+func NewUserController(userService service.IUserService) *UserController {
+	return &UserController{
+		userService: userService,
+	}
 }
